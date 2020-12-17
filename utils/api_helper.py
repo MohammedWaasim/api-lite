@@ -19,7 +19,7 @@ class ApiHelper():
                 return response.json()
             else:
                 self.log.info("the requested url is not successful please check the url and params " + uri + " " + str(params))
-                self.log.info("response received is " + res.json())
+                self.log.info("response received is " + response.json())
         except:
             self.log.error("unable to perform get call for url " + uri + " params " + str(params))
 
