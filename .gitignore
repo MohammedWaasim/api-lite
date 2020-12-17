@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#MW ADDED
+.DS_Store
+.idea/
+
+__pychache__/
+
+reports/*
+*.png
+authorization.txt
+
+# exception to the rule
+!reports/.gitkeep

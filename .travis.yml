@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.8"
+install:
+  - pip3 install pytest
+  - pip3 install allure-pytest
+  - pip3 install pyyaml
+  - pip3 install requests
+  - pip3 install pytest-ordering
+script:  pytest -v -s --alluredir=reports
