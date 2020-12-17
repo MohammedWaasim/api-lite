@@ -19,6 +19,7 @@ class ApiHelper():
                 return response.json()
             else:
                 self.log.info("the requested url is not successful please check the url and params " + uri + " " + str(params))
+                self.log.info("response received is " + res.json())
         except:
             self.log.error("unable to perform get call for url " + uri + " params " + str(params))
 
@@ -36,8 +37,7 @@ class ApiHelper():
                 return res.json()
             else:
                 self.log.info("the requested url is not successful please check the url and params " + uri + " " + str(payload))
-                self.log.info(header)
-                self.log.info(res.json())
+                self.log.info("response received is "+res.json())
         except Exception as e:
             self.log.error("unable to perform post call bcoz of "+e)
 
@@ -55,6 +55,7 @@ class ApiHelper():
                 return res.json()
             else:
                 self.log.info("the requested url is not successful please check the url and params " + uri + " " + str(payload))
+                self.log.info("response received is " + res.json())
         except Exception as e:
             self.log.error("unable to perform post call bcoz of "+e)
 
