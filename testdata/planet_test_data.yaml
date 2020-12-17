@@ -1,0 +1,7 @@
+saved_seach:
+  uri: https://api.planet.com/data/v1/searches
+  item_types: PSScene3Band
+  name: "someX1"
+  update_name: "someX2"
+
+
