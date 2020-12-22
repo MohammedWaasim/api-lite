@@ -15,6 +15,7 @@ class PlanetTest(unittest.TestCase):
         self.api=ApiHelper(self.apikey)
 
     @pytest.mark.run(order=1)
+    @pytest.mark.regression
     def test_create_saved_search(self):
         uri=self.test_data['uri']
         body=self.request_body['saved_search_create_request']
@@ -29,6 +30,7 @@ class PlanetTest(unittest.TestCase):
         al("successfully verified search name")
 
     @pytest.mark.run(order=2)
+    @pytest.mark.regression
     def test_update_saved_search(self):
         uri = self.test_data['uri']
         body = self.request_body['saved_search_create_request']
