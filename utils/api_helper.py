@@ -16,6 +16,7 @@ class ApiHelper():
                 header["Content-Type"]="application/json"
                 header["x-rapidapi-key"]=self.apikey
                 header["x-rapidapi-host"]=self.apihost
+            cl.allurelogs(f"performing Get request on {uri}")
             response=requests.get(url=uri,params=params,headers=header)
             if(response.status_code==200):
                 return response.json()
