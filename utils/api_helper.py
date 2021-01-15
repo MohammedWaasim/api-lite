@@ -5,15 +5,17 @@ import requests
 import utils.custom_logger as cl
 class ApiHelper():
     log=cl.customLogger(logging.DEBUG)
-    def __init__(self,apikey):
+    def __init__(self,apikey,apihost):
         self.apikey=apikey
+        self.apihost=apihost
 
     def get(self,uri,params=None,header=None):
         try:
             if not header:
                 header={}
                 header["Content-Type"]="application/json"
-                header["Authorization"]=self.apikey
+                header["x-rapidapi-key"]=self.apikey
+                header["x-rapidapi-host"]=self.apihost
             response=requests.get(url=uri,params=params,headers=header)
             if(response.status_code==200):
                 return response.json()
@@ -28,7 +30,8 @@ class ApiHelper():
             if not header:
                 header = {}
                 header["Content-Type"] = "application/json"
-                header["Authorization"] = self.apikey
+                header["x-rapidapi-key"] = self.apikey
+                header["x-rapidapi-host"] = self.apihost
                 header['Accept']= 'text/plain'
             res = requests.post(url=uri,json=payload,headers=header)
             #here ideally it should be 201 status code
@@ -46,7 +49,8 @@ class ApiHelper():
             if not header:
                 header = {}
                 header["Content-Type"] = "application/json"
-                header["Authorization"] = self.apikey
+                header["x-rapidapi-key"] = self.apikey
+                header["x-rapidapi-host"] = self.apihost
                 header['Accept']= 'text/plain'
             res = requests.put(url=uri,json=payload,headers=header)
             #here ideally it should be 201 status code

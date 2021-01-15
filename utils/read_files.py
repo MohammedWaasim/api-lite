@@ -3,12 +3,10 @@ import os
 import yaml
 import json
 
-def read_yaml_file(filename,root="testdata"):
+def read_yaml_file(filename):
     with open(filename) as file:
         data=yaml.full_load(file)
-        if(root=="testdata"):
-            return data['testdata']
-        return data[root]
+        return data
 
 def read_json_file(filename):
     with open(filename) as file:
